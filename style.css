@@ -174,3 +174,35 @@ button:hover {
   margin-top: 0;
   color: #ff5ea8;
 }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+.about {
+  padding: 4rem;
+  background: #0f0f1a;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  max-width: 700px;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+section {
+  scroll-margin-top: 80px;
+}
+html {
+  scroll-behavior: smooth;
+}
