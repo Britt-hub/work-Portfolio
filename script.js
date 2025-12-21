@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const faders = document.querySelectorAll('.fade-in');
+  const elements = document.querySelectorAll('.fade-in');
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.15 });
 
-  faders.forEach(el => observer.observe(el));
+  elements.forEach(el => observer.observe(el));
 });
