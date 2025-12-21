@@ -1,20 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const faders = document.querySelectorAll('.fade-in');
 
-  const appearOptions = {
-    threshold: 0.1
-  };
-
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
-  }, appearOptions);
+  }, { threshold: 0.1 });
 
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
+  faders.forEach(el => observer.observe(el));
 });
