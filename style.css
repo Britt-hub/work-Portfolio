@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f0f1a;
+  color: #ffffff;
+}
+
+.hero, .work, .personality {
+  padding: 4rem;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero h1 {
+  font-size: 3rem;
+}
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  opacity: 0.85;
+}
+button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #7c5cff, #ff5ea8);
+  border: none;
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(124, 92, 255, 0.4);
+}
+
+/* Work Section */
+.work {
+  background: #121224;
+}
+.work h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.project {
+  background: #1e1e35;
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(124, 92, 255, 0.4);
+}
+.project h3 {
+  margin-top: 0;
+  color: #ff5ea8;
+}
+.project p {
+  opacity: 0.85;
+}
+
+/* Personality Section */
+.personality h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: 1rem 0;
+}
+
+.hero-sub {
+  font-size: 1.25rem;
+  max-width: 650px;
+  opacity: 0.85;
+}
+
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #7c5cff, #ff5ea8);
+  color: white;
+}
+
+.btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.35);
+}
+
+.btn.secondary {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+}
+
+.btn.secondary:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7c5cff, #ff5ea8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.work {
+  background: #121224;
+}
+
+.work h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.work-card {
+  background: #1e1e35;
+  padding: 2rem;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(124, 92, 255, 0.35);
+}
+
+.work-card h3 {
+  margin-top: 0;
+  color: #ff5ea8;
+}
