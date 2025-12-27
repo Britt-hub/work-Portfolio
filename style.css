@@ -332,26 +332,111 @@ html {
               0 0 25px rgba(255,94,168,0.5),
               0 0 35px rgba(154,208,182,0.4);
 }
+
+/* RESUME SECTION  */
 .resume {
-  padding: 4rem;
-  background: linear-gradient(
-    135deg,
-    rgba(124, 92, 255, 0.08),
-    rgba(255,94,168, 0.08),
-    rgb(168, 197,0.08)
-  );
+  padding: 6rem 4rem;
+  background: radial-gradient(circle at top, #1b1b3a, #0f0f1a);
+  text-align: center
 }
-.resume h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.resume-sub {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  opacity: 0.8;
 }
-.resume p {
-max-width: 600px;
-opacity: 0.85;
-}
-.resume-actions {
-  margin-top: 2rem;
+/* This is for the orbit stuff */
+.resume-orbit{
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* This is for the planets */
+.resume-planet {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff7ac8, #7c5cff, #2a2a55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(124,92,255,0.6);
+  
+}
+.resume-planet::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 2px solid rgba(198,255,214,0.6);
+}
+.resume-planet span {
+  z-index: 1;
+}
+.resume-planet:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(255,122,200,0.8);
+
+}
+
+/* floating planets */
+@keyframes float {
+  0%, 100% { transform: translate(0); }
+  50% { transform: translate(-12px);}
+}
+/* Modal */
+.resume-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.resume-modal.active {
+  display: flex;
+}
+
+.resume-modal-content {
+  background: #0f0f1a;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 60px rgba(124, 92, 255, 0.6);
+}
+
+.modal-sub {
+  opacity: 0.75;
+  margin-bottom: 1.5rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  color: #ffff ;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* iframe */
+.resume-iframe {
+  width: 100%;
+  height: 60vh;
+  border: none;
+  border-radius: 12px;
+  margin-top: 1.5rem;
 }

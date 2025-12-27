@@ -25,3 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
     vinylStack.classList.toggle('active'); // toggle fan-out
   });
 });
+
+// Resume fun stuff
+const openResume = document.getElementById('openResume');
+const resumeModal = document.getElementById('resumeModal');
+const closeResume = document.getElementById('closeResume');
+
+if ( openResume && resumeModal && closeResume) {
+  openResume.addEventListener('click', () => {
+    resumeModal.classList.add('active');
+  });
+
+  closeResume.addEventListener('click', () => {
+    resumeModal.classList.remove('active');
+  });
+
+  resumeModal.addEventListener('click', (e) => {
+    if (e.target === resumeModal) {
+      resumeModal.classList.remove('active');
+    }
+  });
+}
+
