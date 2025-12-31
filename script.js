@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 3000);
 
   const vinylSpin = document.querySelector('.vinyl-spin');
+  if (vinylSpin && resumeModal) {
+    vinylSpin.addEventListener('dbclick', () => {
+      resumeModal.classList.add('active');
+    }
+    );
+  }
   const vinylStack = document.querySelector('.vinyl-stack'); // updated
 
   // Toggle fan-out vinyl stack
