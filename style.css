@@ -43,11 +43,11 @@ h2::after {
   position: absolute;
   animation: float 6s infinite;
 }
-@keyframes float {
+/* @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
-}
+} */
 
 /* GLOBAL STYLES */
 * {
@@ -360,13 +360,42 @@ section::after {
   position:relative;
   width: 300px;
   height: 300px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 }
 .resume-orbit::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 1px dashed rgba(154,208,182, 0.25);
+  border: 1px dashed rgba(154,208,182,0.25);
+  border-radius: 50%;
+}
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -150px;
+  transform: translate(-50%, -50%);
+  animation: orbit 18s linear infinite;
+}
+.planet-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+
+  transform: translateX(120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.float-wrapper {
+  animation: float 4s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* This is for the planets */
@@ -382,9 +411,7 @@ section::after {
   font-weight: 600;
   cursor: pointer;
   position: relative;
-  animation: float 6s ease-in-out infinite;
-  box-shadow: 0 0 40px rgba(124,92,255,0.6);
-  
+  box-shadow: 0 0 40px rgba(124,92,255,0.6);  
 }
 .resume-planet::before {
   content: "";
@@ -402,30 +429,26 @@ section::after {
   box-shadow: 0 0 60px rgba(255,122,200,0.8);
 
 }
-.resume-orbit .resume-planet {
+/* .resume-orbit .resume-planet {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: -150px center;
-  animation: 
-    orbit 18s linear infinite,
-    float 6s ease-in-out infinite;
-}
+  width: 220px;
+  margin-left: -110px;
+  margin-top: -110px;
+  transform-origin: center center; 
+} */
 
 /* orbit animation */
 @keyframes orbit {
-  from {
-    transform: rotate(0deg) translateX(150px);
-  }
-  to {
-    transform: rotate(360deg) translateX(150px);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* floating planets */
 @keyframes float {
-  0%, 100% { transform: translate(0); }
-  50% { transform: translate(-12px);}
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px);}
 }
 /* Modal */
 .resume-modal {
