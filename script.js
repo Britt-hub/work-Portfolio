@@ -53,3 +53,34 @@ if ( openResume && resumeModal && closeResume) {
   });
 }
 
+async function loadLatestPost() {
+  const query =
+  query {
+    user(username: "TheSoulCod3r") {
+      publication {
+        posts(first: 1) {
+          edges {
+            node {
+              title
+              brief
+              url
+              coverImage
+                url
+            }
+          }
+        }
+      }
+    }
+  }
+  
+};
+
+try {
+  const res = await fetch("https:gql.hashnode.com/", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({query})
+  });
+
+  const json = await res.json();
+}
