@@ -196,7 +196,7 @@ h2::after {
 
 /* ANIMATIONS */
 .fade-in {
-  opacity: 0;
+  opacity: 1 !important;
   transform: translateY(20px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
@@ -448,12 +448,14 @@ section::after {
 .blog-featured {
  background: var(--bg-card);
  border-radius: 18px;
- padding: 2rem;
+ padding: 1.5rem;
  display: grid;
  grid-template-columns: 1fr 1.2fr;
- gap: 2rem;
+ gap: 1.5rem;
  align-items: center;
  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+ max-width: 800px;
+ margin: 0 auto;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -463,15 +465,23 @@ section::after {
 }
 
 .blog-content img {
-  width: 100%;
-  border-radius: 14px;
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
   object-fit: cover;
 
 }
 
+.blog-featured img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 .blog-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .blog-content p {
@@ -495,5 +505,17 @@ section::after {
 @keyframes skeleton {
   0% { background-position: 100% 50%;}
   100% {background-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-featured {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .blog-featured img {
+    width: 100%;
+    height: auto;
   }
 }
